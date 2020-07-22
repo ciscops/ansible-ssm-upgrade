@@ -7,7 +7,7 @@ The following tools will need to be installed on your system:
   - SSHPass
 
 ## Update Directory File
-We have included a sample directory but you will need to update the directory with your hosts, usernames, and passwords before you run the playbook.
+We have included a sample directory but you will need to update the directory file with your hosts, usernames, and passwords before you run the playbook.
 
 ## SSM OnPrem Patch
 The patch playbook will require that two files are present in the playbook directory. You can find the most recent patch here:  https://software.cisco.com/download/home/286285506/type/286285517/os/Linux/release/8-202006
@@ -21,7 +21,7 @@ SSM_On-Prem_8-202006_Upgrade.sh
 SSM_On-Prem_8-202006_Upgrade.sh.sha256
 ```
 
-Once these files are present you will need to edit the patch.yml to your desired version, upgrade file, and checksum files. Once all the steps above have been completed you can run the playbook with this command: 
+Once these files are present you will need to edit the patch.yml to your desired version, upgrade file, and checksum files. Once the steps above have been completed you can run the playbook with this command: 
 
 ```
 ansible-playbook patch.yml

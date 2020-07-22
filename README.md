@@ -1,5 +1,5 @@
 # ansible-ssm-upgrade
-An ansible role designed for patching the Cisco Smart Software Manager Satellite.
+An ansible role designed for patching the Cisco Smart Software Manager On-Prem.
 
 ## Prerequisites
 The following tools will need to be installed on your system:

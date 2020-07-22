@@ -20,6 +20,11 @@ The patch playbook will require that two files are present in the playbook direc
 SSM_On-Prem_8-202006_Upgrade.sh
 SSM_On-Prem_8-202006_Upgrade.sh.sha256
 ```
+After the files are copied, you will need to make them executable using the commands below:
+```
+chmod +x SSM_On-Prem_8-202006_Upgrade.sh
+chmod +x SSM_On-Prem_8-202006_Upgrade.sh.sha256
+```
 
 Once these files are present you will need to edit the patch.yml to your desired version, upgrade file, and checksum files. Once the steps above have been completed you can run the playbook with this command: 
 

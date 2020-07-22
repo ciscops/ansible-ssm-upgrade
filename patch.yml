@@ -1,0 +1,55 @@
+---
+- name: CSSM upgrade playbook
+  hosts: servers
+  gather_facts: no
+  vars:
+    device_required_version: '8-202006'
+    ansible_sudo_password: "{{ ansible_password }}"
+    device_requires_install: false
+
+  tasks:
+  - name: Collect version information
+    shell: docker exec backend cat public/version.txt
+    register: result
+    become: yes
+    become_method: sudo
+  
+  - set_fact: 
+      device_version: "{{ result.stdout_lines[0] }}"
+
+  - set_fact: 
+      device_requires_install: true
+    when: device_version != device_required_version
+
+  - name: Stage upgrade files
+    copy: 
+      src: SSM_On-Prem_8-202006_Upgrade.sh 
+      dest: /home/admin/
+      mode: u+x
+    when: device_requires_install == true
+
+  - name: Stage checksum file
+    copy: 
+      src: SSM_On-Prem_8-202006_Upgrade.sh.sha256 
+      dest: /home/admin/
+      mode: u+x
+    when: device_requires_install == true
+
+  - name: Begin upgrade
+    shell: ./SSM_On-Prem_8-202006_Upgrade.sh
+    become: yes
+    become_method: sudo
+    when: device_requires_install == true
+
+  - name: Collect version
+    shell: docker exec backend cat public/version.txt
+    register: result
+    become: yes
+    become_method: sudo
+  
+  - set_fact:
+      device_version: "{{ result.stdout_lines[0] }}"
+  
+  - name: Verify upgrade was successful
+    assert:
+      that: device_version == device_required_version

@@ -3,7 +3,7 @@
   hosts: servers
   gather_facts: no
   vars:
-    device_required_version: '8-202006'
+    device_required_version: "{{ upgrade_version }}" 
     ansible_sudo_password: "{{ ansible_password }}"
     device_requires_install: false
 
@@ -23,20 +23,20 @@
 
   - name: Stage upgrade files
     copy: 
-      src: SSM_On-Prem_8-202006_Upgrade.sh 
+      src: "SSM_On-Prem_{{ device_required_version }}_Upgrade.sh" 
       dest: /home/admin/
       mode: u+x
     when: device_requires_install == true
 
   - name: Stage checksum file
     copy: 
-      src: SSM_On-Prem_8-202006_Upgrade.sh.sha256 
+      src: "SSM_On-Prem_{{ device_required_version }}_Upgrade.sh.sha256" 
       dest: /home/admin/
       mode: u+x
     when: device_requires_install == true
 
   - name: Begin upgrade
-    shell: ./SSM_On-Prem_8-202006_Upgrade.sh
+    shell: "./SSM_On-Prem_{{ device_required_version }}_Upgrade.sh"
     become: yes
     become_method: sudo
     when: device_requires_install == true

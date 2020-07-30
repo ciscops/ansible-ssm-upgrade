@@ -29,5 +29,5 @@ chmod +x SSM_On-Prem_8-202006_Upgrade.sh.sha256
 Once these files are present you will need to edit the patch.yml to your desired version, upgrade file, and checksum files. Once the steps above have been completed you can run the playbook with this command: 
 
 ```
-ansible-playbook patch.yml
+ansible-playbook patch.yml e- version=<desired_version>
 ```

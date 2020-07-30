@@ -1,9 +1,9 @@
 [servers]
-CSSM1 ansible_host=<your_ip_here>
-CSSM2 ansible_host=<your_ip_here>
+CSSM1 ansible_host=<your-host-ip>
 
 [servers:vars]
-ansible_password=CiscoAdmin!2345
-ansible_sudo_pass=CiscoAdmin!2345
+ansible_password=<enter-password>
+ansible_sudo_pass=<enter-password>
 ansible_user=admin
 ansible_ssh_user=admin
+upgrade_version= "{{ version }}"

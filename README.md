@@ -1,10 +1,10 @@
 # ansible-ssm-upgrade
-An ansible role designed for patching the Cisco Smart Software Manager On-Prem.
+This ansible playbook provides automation to upgrade your Cisco Smart Software Manager On-Prem to your desired verson.  
 
 ## Prerequisites
 The following tools will need to be installed on your system:
-  - ansible
-  - SSHPass
+  - ansible (you can find install instructions here:  https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+  - SSHPass (this package allows ansible to ssh in to your OnPrem with your supplied user and password.)
 
 ## Update Directory File
 We have included a sample directory but you will need to update the directory file with your hosts, usernames, and passwords before you run the playbook.

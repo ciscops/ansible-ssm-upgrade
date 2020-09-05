@@ -1,5 +1,5 @@
 # ansible-ssm-upgrade
-This ansible playbook provides automation to upgrade your Cisco Smart Software Manager On-Prem to your desired verson.  
+This ansible playbook provides automation to upgrade your Cisco Smart Software Manager On-Prem to your desired version.  
 
 ## Prerequisites
 The following tools will need to be installed on your system:
@@ -31,3 +31,4 @@ Once these files are present you will need to edit the patch.yml to your desired
 ```
 ansible-playbook patch.yml e- version=<desired_version>
 ```
+## Please Note:  This process can take some time depending on your upload/download speeds as it must first scp the files, then run the upgrade.  The process can take 15 minutes to an hour depending on the size of your database.  Always take a snapshot or database back-up before beginning the upgrade process. 

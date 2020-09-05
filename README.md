@@ -31,4 +31,4 @@ Once these files are present you will need to edit the patch.yml to your desired
 ```
 ansible-playbook patch.yml e- version=<desired_version>
 ```
-## Please Note:  This process can take some time depending on your upload/download speeds as it must first scp the files, then run the upgrade.  The process can take 15 minutes to an hour depending on the size of your database.  Always take a snapshot or database back-up before beginning the upgrade process. 
+### Please Note:  This process can take some time depending on your upload/download speeds as it must first scp the files, then run the upgrade.  The process can take 15 minutes to an hour depending on the size of your database.  Always take a snapshot or database back-up before beginning the upgrade process. 

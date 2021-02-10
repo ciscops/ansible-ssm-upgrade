@@ -6,7 +6,7 @@ The following tools will need to be installed on your system:
   - Ansible (Required to run Ansible playbooks.  The install instructions here:  https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
   - SSHPass (This package allows ansible to ssh in to your OnPrem with your supplied username and password.  To install on Ubuntu: `apt-get install sshpass`.)
 
-## Update Directory File
+## Update Inventory File
 A sample inventory file is included.  Prior to running the playbook, you will need to update the host, username, and password variables to match your environment.
 
 ## SSM OnPrem Patch

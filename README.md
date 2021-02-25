@@ -1,4 +1,5 @@
 # ansible-ssm-upgrade
+* Currently supports upgrades up to 8-202008, we are working on an update to fix issues found when upgrading to 8-202010.
 This repo contains an Ansible playbook that will upgrade the software on your Cisco Smart Software Manager On-Prem.  
 
 ## Prerequisites
